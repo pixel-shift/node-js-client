@@ -649,6 +649,7 @@ function _operationDescription(operationId, options, callback) {
 class V1API extends ServiceClient {
   /**
    * Create a V1API.
+   * @param {credentials} credentials - Subscription credentials which uniquely identify client subscription.
    * @param {string} [baseUri] - The base URI of the service.
    * @param {object} [options] - The parameter options
    * @param {Array} [options.filters] - Filters to be added to the request pipeline
@@ -656,16 +657,20 @@ class V1API extends ServiceClient {
    * {@link https://github.com/request/request#requestoptions-callback Options doc}
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    */
-  constructor(baseUri, options) {
+  constructor(credentials, baseUri, options) {
+    if (credentials === null || credentials === undefined) {
+      throw new Error('\'credentials\' cannot be null.');
+    }
 
     if (!options) options = {};
 
-    super(null, options);
+    super(credentials, options);
 
     this.baseUri = baseUri;
     if (!this.baseUri) {
       this.baseUri = 'http://localhost';
     }
+    this.credentials = credentials;
 
     let packageInfo = this.getPackageJsonInfo(__dirname);
     this.addUserAgentInfo(`${packageInfo.name}/${packageInfo.version}`);

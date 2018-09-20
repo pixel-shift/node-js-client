@@ -4,7 +4,7 @@
  * regenerated.
  */
 
-import { ServiceClient, ServiceClientOptions, ServiceCallback, HttpOperationResponse } from 'ms-rest';
+import { ServiceClient, ServiceClientOptions, ServiceCallback, HttpOperationResponse, ServiceClientCredentials } from 'ms-rest';
 import * as models from "./models";
 
 export default class V1API extends ServiceClient {
@@ -12,6 +12,8 @@ export default class V1API extends ServiceClient {
    * @class
    * Initializes a new instance of the V1API class.
    * @constructor
+   *
+   * @param {credentials} credentials - Subscription credentials which uniquely identify client subscription.
    *
    * @param {string} [baseUri] - The base URI of the service.
    *
@@ -25,7 +27,9 @@ export default class V1API extends ServiceClient {
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    *
    */
-  constructor(baseUri?: string, options?: ServiceClientOptions);
+  constructor(credentials: ServiceClientCredentials, baseUri?: string, options?: ServiceClientOptions);
+
+  credentials: ServiceClientCredentials;
 
 
   /**
