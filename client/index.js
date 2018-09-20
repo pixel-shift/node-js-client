@@ -19,7 +19,6 @@ const host = "www.pixelshift.io";
 
     const api = new PixelshiftApi(creds, "https://www.pixelshift.io");
 
-
     const storageSource = new PixelshiftApiModels.StorageSourceS3();
     storageSource.sourceBucket = "sourcebucket";
     storageSource.sourceKey = "sourcekey";
@@ -48,8 +47,14 @@ const host = "www.pixelshift.io";
 
     addTypeDiscriminatorsToBatch(batch);
 
-    const apiResponse = await api.processImageBatch({batch});
-
+    const apiResponsePromise = api.processImageBatch({ batch });
+    let apiResponse;
+    try{
+        apiResponse = await apiResponsePromise;
+    }catch(err){
+        console.log(err);
+    }
+    
     console.log(JSON.stringify(apiResponse, null, 2));
 })();
 
