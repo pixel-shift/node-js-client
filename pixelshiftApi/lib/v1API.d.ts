@@ -4,16 +4,14 @@
  * regenerated.
  */
 
-import { ServiceClient, ServiceClientOptions, ServiceCallback, HttpOperationResponse, ServiceClientCredentials } from 'ms-rest';
+import { ServiceClient, ServiceClientOptions, ServiceCallback, HttpOperationResponse } from 'ms-rest';
 import * as models from "./models";
 
-export default class PixelshiftApi extends ServiceClient {
+export default class V1API extends ServiceClient {
   /**
    * @class
-   * Initializes a new instance of the PixelshiftApi class.
+   * Initializes a new instance of the V1API class.
    * @constructor
-   *
-   * @param {credentials} credentials - Subscription credentials which uniquely identify client subscription.
    *
    * @param {string} [baseUri] - The base URI of the service.
    *
@@ -27,9 +25,7 @@ export default class PixelshiftApi extends ServiceClient {
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    *
    */
-  constructor(credentials: ServiceClientCredentials, baseUri?: string, options?: ServiceClientOptions);
-
-  credentials: ServiceClientCredentials;
+  constructor(baseUri?: string, options?: ServiceClientOptions);
 
 
   /**
@@ -313,4 +309,4 @@ export default class PixelshiftApi extends ServiceClient {
   operationDescription(operationId: string, options: { customHeaders? : { [headerName: string]: string; } }, callback: ServiceCallback<models.TransformGraphMetadataEnvelope>): void;
 }
 
-export { PixelshiftApi, models as PixelshiftApiModels };
+export { V1API, models as V1APIModels };

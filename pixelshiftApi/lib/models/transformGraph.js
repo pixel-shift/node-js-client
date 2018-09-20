@@ -6,8 +6,6 @@
 
 'use strict';
 
-const models = require('./index');
-
 /**
  * A description of steps for processing images from source to destination. Can
  * be branched by using the "outputs"

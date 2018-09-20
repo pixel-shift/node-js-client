@@ -6,8 +6,6 @@
 
 'use strict';
 
-const models = require('./index');
-
 /**
  * A summary of batch compute time and pending, failed and completed operations
  *

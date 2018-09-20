@@ -1,0 +1,24 @@
+{
+  "name": "",
+  "author": "Microsoft Corporation",
+  "description": "V1API Library with typescript type definitions for node",
+  "version": "",
+  "dependencies": {
+    "ms-rest": "^2.3.3"
+  },
+  "keywords": [
+    "node",
+    "azure"
+  ],
+  "license": "MIT",
+  "main": "./lib/v1API.js",
+  "types": "./lib/v1API.d.ts",
+  "homepage": "https://github.com/azure/azure-sdk-for-node",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azure/azure-sdk-for-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azure/azure-sdk-for-node/issues"
+  }
+}

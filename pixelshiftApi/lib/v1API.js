@@ -645,11 +645,10 @@ function _operationDescription(operationId, options, callback) {
   });
 }
 
-/** Class representing a PixelshiftApi. */
-class PixelshiftApi extends ServiceClient {
+/** Class representing a V1API. */
+class V1API extends ServiceClient {
   /**
-   * Create a PixelshiftApi.
-   * @param {credentials} credentials - Subscription credentials which uniquely identify client subscription.
+   * Create a V1API.
    * @param {string} [baseUri] - The base URI of the service.
    * @param {object} [options] - The parameter options
    * @param {Array} [options.filters] - Filters to be added to the request pipeline
@@ -657,20 +656,16 @@ class PixelshiftApi extends ServiceClient {
    * {@link https://github.com/request/request#requestoptions-callback Options doc}
    * @param {boolean} [options.noRetryPolicy] - If set to true, turn off default retry policy
    */
-  constructor(credentials, baseUri, options) {
-    if (credentials === null || credentials === undefined) {
-      throw new Error('\'credentials\' cannot be null.');
-    }
+  constructor(baseUri, options) {
 
     if (!options) options = {};
 
-    super(credentials, options);
+    super(null, options);
 
     this.baseUri = baseUri;
     if (!this.baseUri) {
       this.baseUri = 'http://localhost';
     }
-    this.credentials = credentials;
 
     let packageInfo = this.getPackageJsonInfo(__dirname);
     this.addUserAgentInfo(`${packageInfo.name}/${packageInfo.version}`);
@@ -1101,7 +1096,7 @@ class PixelshiftApi extends ServiceClient {
 
 }
 
-module.exports = PixelshiftApi;
-module.exports['default'] = PixelshiftApi;
-module.exports.PixelshiftApi = PixelshiftApi;
-module.exports.PixelshiftApiModels = models;
+module.exports = V1API;
+module.exports['default'] = V1API;
+module.exports.V1API = V1API;
+module.exports.V1APIModels = models;

@@ -6,8 +6,6 @@
 
 'use strict';
 
-const models = require('./index');
-
 /**
  * a model for a long list of batches with potential future paging support
  *

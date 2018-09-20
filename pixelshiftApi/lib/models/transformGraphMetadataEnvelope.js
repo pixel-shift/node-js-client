@@ -6,8 +6,6 @@
 
 'use strict';
 
-const models = require('./index');
-
 /**
  * A wrapped for RawTransformGraph instances, containing operation-specific
  * metadata
