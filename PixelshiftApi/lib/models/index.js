@@ -37,6 +37,7 @@ exports.ImageFormatJpeg = require('./imageFormatJpeg');
 exports.ImageFormatPng = require('./imageFormatPng');
 exports.ImageFormatTiff = require('./imageFormatTiff');
 exports.ImageFormatWebp = require('./imageFormatWebp');
+exports.UnitUnknown = require('./unitUnknown');
 exports.discriminators = {
   'TransformUnit' : exports.TransformUnit,
   'TransformUnit.StorageSource_S3' : exports.StorageSourceS3,
@@ -53,5 +54,6 @@ exports.discriminators = {
   'TransformUnit.ImageFormat_Jpeg' : exports.ImageFormatJpeg,
   'TransformUnit.ImageFormat_Png' : exports.ImageFormatPng,
   'TransformUnit.ImageFormat_Tiff' : exports.ImageFormatTiff,
-  'TransformUnit.ImageFormat_Webp' : exports.ImageFormatWebp
+  'TransformUnit.ImageFormat_Webp' : exports.ImageFormatWebp,
+  'TransformUnit.Unit_Unknown' : exports.UnitUnknown
 };

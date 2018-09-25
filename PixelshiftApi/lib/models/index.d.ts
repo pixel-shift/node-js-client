@@ -510,3 +510,14 @@ export interface ImageFormatTiff extends TransformUnit {
 export interface ImageFormatWebp extends TransformUnit {
   quality?: number;
 }
+
+/**
+ * @class
+ * Initializes a new instance of the UnitUnknown class.
+ * @constructor
+ * Target type for TransformUnits that are unrecognized at the current schema
+ * level
+ *
+ */
+export interface UnitUnknown extends TransformUnit {
+}
